@@ -1,8 +1,9 @@
-from invoke import task
 import tornado.ioloop
 
+from invoke import task
+from highchat.app import app
+
 from settings import PORT
-from app import app
 
 
 @task

@@ -1,5 +1,5 @@
 import tornado.web
-from handlers import AnalyzeHandler
+from highchat.handlers import AnalyzeHandler
 
 
 app = tornado.web.Application([

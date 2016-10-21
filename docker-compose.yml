@@ -3,7 +3,7 @@ tornado:
   volumes:
     - ./:/code
   environment:
-    - APPLICATION_PORT=${TORNADO_PORT}
+    - APPLICATION_PORT=${APPLICATION_PORT}
   ports:
-    - ${TORNADO_PORT}:${TORNADO_PORT}
+    - ${APPLICATION_PORT}:${APPLICATION_PORT}
   command: /bin/bash -c "cd /code && pip install -r requirements.txt && exec invoke run_dev"
