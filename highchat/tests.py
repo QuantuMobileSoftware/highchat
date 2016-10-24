@@ -6,7 +6,7 @@ from settings import PORT
 
 
 class TestHighChat(AsyncTestCase):
-    request_timeout = 60
+    request_timeout = 1000
     connections_count = 1000
     urls = [
         'http://info.cern.ch/hypertext/WWW/TheProject.html',

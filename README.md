@@ -1,7 +1,20 @@
-#Highchat
+# Highchat
 
 ## Overview
-Web service that takes requests with plain text containing urls and returns json with urls' titles. The service handles 1000 concurrent requests.
+Highchat is a web service that takes requests with plain text containing urls and returns json with urls' titles. Highchat handles ~1000 concurrent requests.
+
+## Benchmark
+Testing machine configuration: 1.1 GHz Intel Core M, 8 GB 1600 MHz DDR3
+Test execution time (1000 connections, 1 link per connection) : ~100s
+
+## Installation
+```
+git clone https://github.com/dmitry-yakutkin/highchat
+cd highchat
+docker-compose up
+```
+
+By default, application is available locally on port :9000.
 
 ## API
 Request:
@@ -29,5 +42,5 @@ Response:
 ## Testing
 Tests execution is done with Tornado's testing framework:
 ```
-python -m tornado.testing highchat/tests.py
+docker exec -it highchat_tornado_1 python -m tornado.testing highchat.tests
 ```

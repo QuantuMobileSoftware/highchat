@@ -9,16 +9,18 @@ from bs4 import BeautifulSoup
 
 
 class AnalyzeHandler(tornado.web.RequestHandler):
-    RE_FIND_URLS = re.compile(r'https?://[^\s]+')
+    re_urls = re.compile(r'https?://[^\s]+')
+    request_timeout = 60
 
     @gen.coroutine
     def post(self):
         http_client = client.AsyncHTTPClient()
 
         content = self.request.body.decode()
-        urls = self.RE_FIND_URLS.findall(content)
+        urls = self.re_urls.findall(content)
 
-        response_futures = [http_client.fetch(url) for url in urls]
+        response_futures = [
+            http_client.fetch(client.HTTPRequest(url, request_timeout=self.request_timeout)) for url in urls]
         responses = yield response_futures
 
         links = []
