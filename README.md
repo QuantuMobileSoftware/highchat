@@ -5,6 +5,7 @@ Highchat is a web service that takes requests with plain text containing urls an
 
 ## Benchmark
 Testing machine configuration: 1.1 GHz Intel Core M, 8 GB 1600 MHz DDR3
+
 Test execution time (1000 connections, 1 link per connection) : ~100s
 
 ## Installation
