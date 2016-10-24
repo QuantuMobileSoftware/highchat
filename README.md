@@ -4,9 +4,9 @@
 Highchat is a web service that takes requests with plain text containing urls and returns json with urls' titles. Highchat handles ~1000 concurrent requests.
 
 ## Benchmark
-Testing machine configuration: 1.1 GHz Intel Core M, 8 GB 1600 MHz DDR3
+Testing machine configuration: Intel Core i5-5200U CPU 2.20GHz × 4, 8 GB 1600 MHz DDR3
 
-Test execution time (1000 connections, 1 link per connection) : ~100s
+Test execution time (1000 connections, 1 link per connection) : ~50s
 
 ## Installation
 ```
